@@ -1,0 +1,58 @@
+<% layout('layouts/boilerplate')%>
+<div class="container-fluid">
+<div class="row">
+       
+        <div class="col-md-6 offset-md-3">
+            <h1 class="text-center">New restor</h1>
+        <form action="/restaurants" method="POST" class="validate-form" enctype="multipart/form-data" novalidate>
+            <div class="mb-3">
+                <label class="form-label" for="title">Name</label>
+                <input class="form-control" type="text" id="title" name="restaurant[title]" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="location">Location</label>
+                <input class="form-control" type="text" id="location" name="restaurant[location]" required>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+           
+            <div class="mb-3">
+                <label class="form-label" for="price">Per Person Price</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="price-label">Rs.</span>
+                    <input type="text" class="form-control" id="price" placeholder="0.00" aria-label="price"
+                        aria-describedby="price-label" name="restaurant[price]" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="description">Description</label>
+                <textarea class="form-control" type="text" id="description" name="restaurant[description]" required></textarea>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+            <div class="mb-3">
+                <div class="input-group">
+                    <div class="custom-file">
+                      <input type="file" class="custom-file-input" id="image" name="image" multiple aria-describedby="image">
+                      <label class="custom-file-label" for="image">Choose pictures</label>
+                    </div>
+                  </div>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-success">Add restor</button>
+            </div>
+        </form>
+        <a href="/restaurants">All restors</a>
+    </div>
+
+</div>
+</div>

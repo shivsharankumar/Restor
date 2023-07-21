@@ -1,0 +1,28 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">restor</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse  pt-2 d-flex d-lg-none flex-column flex-lg-row align-items-start "
+    id="navbarNavAltMarkup">
+    <div class="navbar-nav order-2 order-lg-0 pl-2">
+      <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-link active" href="/restaurants">Explore</a>
+      <a class="nav-link" href="/restaurants/new"> Add Restaurants</a>
+    </div>
+    <div class="navbar-nav ml-lg-auto order-1 order-lg-0 ">
+      <% if(!currentUser) {%>
+        <div class="d-flex justify-content-between">
+      <a class="nav-link btn btn-success text-white px-2" href="/login">Login</a>
+      <a class="nav-link btn btn-success text-white px-2" href="/register">Register</a>
+    </div>
+      <% } else {%>
+      <a class="nav-link text-white" href="">Hey, <span class="user text-white"> <%= currentUser.username %> </span></a>
+    </div>
+      <div class="navbar-nav order-3 order-lg-0 pl-2 pl-lg-0">
+      <a class="nav-link" href="/logout">Logout</a>
+      <% } %>
+    </div>
+  </div>
+</nav>
